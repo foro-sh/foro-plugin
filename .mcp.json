@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "foro": {
+      "type": "http",
+      "url": "https://mcp.foro.sh/mcp"
+    }
+  }
+}

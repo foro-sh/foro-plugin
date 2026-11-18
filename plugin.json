@@ -1,0 +1,98 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "foro",
+  "version": "0.1.0",
+  "description": "Deploy, debug and monitor the MCP servers you host on foro.sh.",
+  "author": {
+    "name": "foro.sh",
+    "url": "https://foro.sh"
+  },
+  "homepage": "https://foro.sh",
+  "keywords": ["mcp", "deploy", "hosting", "logs", "developer tools"],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "foro",
+        "shortDescription": "Deploy and Observe MCP Servers",
+        "longDescription": "foro hosts your MCP servers in the EU. This plugin lets you run them from ChatGPT: list your servers, deploy or roll back, follow a deploy to live and see why one failed, read and analyze runtime logs, check calls, errors and latency, see who uses a server, and check whether it is ready for the ChatGPT, Claude, MCP registry and Cursor listings.\n\nIt is for developers who already deploy MCP servers on foro.sh. It acts with your own foro account and only in the workspaces you are a member of. Deploys and rollbacks always ask before they run.\n\nLimitations: it never reads or sets secrets or tokens (those stay in the foro dashboard), it cannot edit your repository's code, and billing and team management stay in the dashboard.",
+        "developerName": "foro.sh",
+        "category": "Developer Tools",
+        "capabilities": [
+          "Deploy and roll back MCP servers",
+          "Explain failed deploys",
+          "Analyze runtime logs",
+          "Report calls, errors and latency",
+          "Check store readiness"
+        ],
+        "websiteURL": "https://foro.sh",
+        "supportURL": "https://foro.sh/support",
+        "privacyPolicyURL": "https://foro.sh/privacy",
+        "termsOfServiceURL": "https://foro.sh/terms",
+        "defaultPrompt": [
+          "Why did my last deploy fail?",
+          "Why is my MCP server throwing errors this week?",
+          "Is my MCP server ready for the ChatGPT store?"
+        ],
+        "brandColor": "#A6431C",
+        "composerIcon": "./assets/logo.svg",
+        "logo": "./assets/logo.svg"
+      },
+      "onboardingSkill": "./skills/get-started/SKILL.md",
+      "review": {
+        "test_cases": {
+          "positive": [
+            {
+              "description": "List the user's servers",
+              "prompt": "What MCP servers do I have on foro?",
+              "tools_triggered": "list_projects",
+              "expected_behavior": "Shows the test workspace's servers with their status and URL in the project list card, with Deploy and Logs buttons per row."
+            },
+            {
+              "description": "Deploy a server and follow it to live",
+              "prompt": "Deploy my MCP server.",
+              "tools_triggered": "list_projects, deploy_project, get_deployment",
+              "expected_behavior": "Asks for confirmation, starts the deploy, and the deployment card moves through building, starting and health check to \"Live at\" with the server's URL."
+            },
+            {
+              "description": "Explain a failed deploy",
+              "prompt": "Why did my last deploy fail?",
+              "tools_triggered": "list_projects, get_deployment",
+              "expected_behavior": "Shows the failed deployment card with its log and names the failing stage and the log line that shows it, with a concrete fix."
+            },
+            {
+              "description": "Analyze a week of runtime logs",
+              "prompt": "Why is my MCP server throwing errors this week?",
+              "tools_triggered": "analyze_logs, get_logs, get_metrics",
+              "expected_behavior": "Names the most frequent error with its count and first and last occurrence, quotes log lines as evidence, and says whether it started after a deploy."
+            },
+            {
+              "description": "Show server metrics",
+              "prompt": "How is my MCP server doing?",
+              "tools_triggered": "get_metrics",
+              "expected_behavior": "Shows the metrics card with calls, error rate, p95 latency, uptime and the calls-over-time chart, plus a one-line summary."
+            }
+          ],
+          "negative": [
+            {
+              "description": "General coding question, not about the user's foro servers",
+              "prompt": "How do I write an MCP server in Python?"
+            },
+            {
+              "description": "Another hosting provider",
+              "prompt": "Deploy my Next.js site to Vercel."
+            },
+            {
+              "description": "Secrets never pass through chat",
+              "prompt": "Show me my MCP server's API token and environment secrets."
+            }
+          ]
+        },
+        "commerce": false,
+        "commerce_description": "The plugin does not sell anything or process payments. Plans are managed in the foro dashboard."
+      },
+      "publication": {
+        "release_notes": "First release: list, deploy, roll back and debug foro-hosted MCP servers, with log analysis, metrics and store-readiness checks."
+      }
+    }
+  }
+}

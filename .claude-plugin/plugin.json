@@ -1,0 +1,14 @@
+{
+  "name": "foro",
+  "version": "0.1.0",
+  "description": "Deploy, debug and monitor the MCP servers you host on foro.sh.",
+  "author": {
+    "name": "foro.sh",
+    "url": "https://foro.sh"
+  },
+  "homepage": "https://docs.foro.sh/foro-mcp",
+  "repository": "https://github.com/foro-sh/foro-plugin",
+  "license": "MIT",
+  "privacyPolicyUrl": "https://foro.sh/privacy",
+  "keywords": ["mcp", "deploy", "hosting", "logs", "developer tools"]
+}
