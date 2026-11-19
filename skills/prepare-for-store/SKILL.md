@@ -7,7 +7,7 @@ description: Check whether one of the user's foro-hosted MCP servers is ready fo
 
 The user's explicit instructions take priority over these steps.
 
-1. **Find the server** with `list_projects` if it isn't named. The report probes the live server, so it needs to be `live`; if it isn't, offer the deploy-and-verify skill first.
+1. **Find the server** with `list_projects` if it isn't named. The tool and app checks probe the live server, so a server that isn't `live` gets only the checks that need none, plus a `not-live` blocker; offer the deploy-and-verify skill first and run the report again once it is up.
 2. **Run the check.** Call `get_readiness_report`. It lists blockers and warnings per store, each with the rule, the tool it concerns and the detail.
 3. **Explain, store by store.** Lead with blockers for the store the user cares about (ask if unclear; default to the client the user is talking from). Say why each rule exists in one line, e.g. that ChatGPT and Claude confirm any tool not marked read-only before running it.
 4. **Write the fixes, ready to paste:**
