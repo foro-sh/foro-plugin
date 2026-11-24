@@ -16,4 +16,4 @@ The user's explicit instructions take priority over these steps.
    - **Live servers:** offer the fleet-check skill for an overview, or `get_connect_instructions` to add one to ChatGPT, Claude or Cursor.
 5. **Close with three things they can ask next**, phrased as prompts, e.g. "Why did my last deploy fail?", "Why is my server throwing errors this week?", "Is my server ready for a store listing?".
 
-Never ask for secrets, tokens or passwords: a secret is set by the user on the page `request_secrets` links to, never in chat.
+Never ask for secrets, tokens or passwords: the user sets a secret in the foro dashboard, never in chat.

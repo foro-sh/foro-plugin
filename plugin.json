@@ -14,7 +14,7 @@
       "interface": {
         "displayName": "foro",
         "shortDescription": "Deploy and Observe MCP Servers",
-        "longDescription": "foro hosts your MCP servers in the EU. This plugin lets you run them from ChatGPT: list your servers, deploy or roll back, follow a deploy to live and see why one failed, read and analyze runtime logs, check calls, errors and latency, see who uses a server, and check whether it is ready for a store or registry listing.\n\nIt is for developers who already deploy MCP servers on foro.sh. It acts with your own foro account and only in the workspaces you are a member of. Deploys and rollbacks always ask before they run.\n\nLimitations: secret values and tokens never pass through ChatGPT. When a server needs a secret, the plugin names the key and links to a foro page where you type the value yourself. It cannot edit your repository's code, and billing and team management stay in the dashboard.",
+        "longDescription": "foro hosts your MCP servers in the EU. This plugin lets you run them from ChatGPT: list your servers, deploy or roll back, follow a deploy to live and see why one failed, read and analyze runtime logs, check calls, errors and latency, see who uses a server, and check whether it is ready for a store or registry listing.\n\nIt is for developers who already deploy MCP servers on foro.sh. It acts with your own foro account and only in the workspaces you are a member of. Deploys and rollbacks always ask before they run.\n\nLimitations: the plugin never asks for, accepts or shows secrets, API keys or tokens; those stay in the foro dashboard. It cannot edit your repository's code, and billing and team management stay in the dashboard.",
         "developerName": "foro.sh",
         "category": "Developer Tools",
         "capabilities": [
@@ -66,10 +66,10 @@
               "expected_behavior": "Names the most frequent error with its count and first and last occurrence, quotes log lines as evidence, and says whether it started after a deploy."
             },
             {
-              "description": "A deploy needs a secret",
-              "prompt": "My server needs an OPENAI_API_KEY before it can deploy.",
-              "tools_triggered": "list_projects, request_secrets",
-              "expected_behavior": "Gives a link to the foro page where the user types OPENAI_API_KEY themselves, asks them to say when it is saved, and never asks for the value in chat."
+              "description": "Roll back a bad release",
+              "prompt": "Roll my MCP server back to the version before the last deploy.",
+              "tools_triggered": "list_projects, list_deployments, rollback_deployment",
+              "expected_behavior": "Finds the previous live deployment, asks before rolling back, starts the rollback and says how to follow it to live."
             }
           ],
           "negative": [
