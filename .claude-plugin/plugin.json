@@ -1,7 +1,7 @@
 {
   "name": "foro",
   "displayName": "foro",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Deploy, debug and monitor the MCP servers you host on foro.sh.",
   "author": {
     "name": "foro.sh",
