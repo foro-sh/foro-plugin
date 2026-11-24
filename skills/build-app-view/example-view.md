@@ -1,3 +1,8 @@
+# Example view
+
+A complete MCP Apps view to adapt. Save it in the user's repository as a `.tsx` file.
+
+```tsx
 // views/tasks.tsx - an example @foro/app view, built into views/dist/tasks.html.
 // It renders the structuredContent of the tool that mounted it, calls another
 // tool of the same server to change it, and follows the host's theme and height.
@@ -94,3 +99,4 @@ export default function Tasks() {
     </div>
   )
 }
+```

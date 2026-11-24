@@ -7,7 +7,7 @@ description: Build the interface (an MCP Apps view) for an MCP server the user d
 
 The user's explicit instructions take priority over these steps.
 
-This is written in the user's repository, so it needs a client that can edit their files. It follows foro's MCP Apps docs (https://foro.sh/docs/apps); `example-view.tsx` beside this file is a complete view to adapt.
+This is written in the user's repository, so it needs a client that can edit their files. It follows foro's MCP Apps docs (https://foro.sh/docs/apps); `example-view.md` beside this file holds a complete view to adapt.
 
 ## The model
 
