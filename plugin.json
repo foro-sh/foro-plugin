@@ -14,7 +14,7 @@
       "interface": {
         "displayName": "foro",
         "shortDescription": "Deploy and Observe MCP Servers",
-        "longDescription": "foro hosts your MCP servers in the EU. This plugin lets you run them from ChatGPT: list your servers, deploy or roll back, follow a deploy to live and see why one failed, read and analyze runtime logs, check calls, errors and latency, see who uses a server, and check whether it is ready for the ChatGPT, Claude, MCP registry and Cursor listings.\n\nIt is for developers who already deploy MCP servers on foro.sh. It acts with your own foro account and only in the workspaces you are a member of. Deploys and rollbacks always ask before they run.\n\nLimitations: it never reads or sets secrets or tokens (those stay in the foro dashboard), it cannot edit your repository's code, and billing and team management stay in the dashboard.",
+        "longDescription": "foro hosts your MCP servers in the EU. This plugin lets you run them from ChatGPT: list your servers, deploy or roll back, follow a deploy to live and see why one failed, read and analyze runtime logs, check calls, errors and latency, see who uses a server, and check whether it is ready for a store or registry listing.\n\nIt is for developers who already deploy MCP servers on foro.sh. It acts with your own foro account and only in the workspaces you are a member of. Deploys and rollbacks always ask before they run.\n\nLimitations: it never reads or sets secrets or tokens (those stay in the foro dashboard), it cannot edit your repository's code, and billing and team management stay in the dashboard.",
         "developerName": "foro.sh",
         "category": "Developer Tools",
         "capabilities": [
